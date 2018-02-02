@@ -27,7 +27,7 @@ public:
 
   bool buttonPressed()
   {
-    if (digitalRead(keyButton) == HIGH)
+    if (digitalRead(keyButton) == LOW)
       return true;
     else
       return false;
