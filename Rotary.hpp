@@ -1,3 +1,10 @@
+#ifndef ROTARY_HPP
+#define ROTARY_HPP
+
+#define RIGHT 1
+#define LEFT 2
+#define NONE 0
+
 class Rotary
 {
 private:
@@ -38,7 +45,7 @@ public:
     aState = digitalRead(key1); // Reads the "current" state of the outputA
     // If the previous and the current state of the outputA are different, that
     // means a Pulse has occured
-    if (aState != aLastState) {
+    if (aState != aLastState && aState == LOW) {
       // If the outputB state is different to the outputA state, that means the
       // encoder is rotating clockwise
       if (digitalRead(key2) != aState) {
@@ -55,3 +62,5 @@ public:
     return result;
   }
 };
+
+#endif
